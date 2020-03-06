@@ -23,7 +23,9 @@ jobs:
   trigger-workflows:
     executor: node
     steps:
-      - checkout
+      - checkout:
+          path: ~/project
+      - run: yarn --frozen-lockfile
       - run:
           name: Trigger workflows
           command: node ./circleci.js
