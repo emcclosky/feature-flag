@@ -4,6 +4,7 @@ const { exec } = require('child_process');
 const modules = ['server'];
 
 exec('npx lerna changed --all', (error, stdout) => {
+    console.log('BEGINNING CIRCLECI.JS')
     modules.forEach(name => {
         if (!stdout.includes(name)) return;
 

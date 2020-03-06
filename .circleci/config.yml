@@ -23,8 +23,7 @@ jobs:
   trigger-workflows:
     executor: node
     steps:
-      - checkout:
-          path: ~/project
+      - checkout
       - run: yarn --frozen-lockfile
       - run:
           name: Trigger workflows
